@@ -123,7 +123,7 @@ namespace ClientMVC.Controllers
                 // This method generates a token by calling Stripe endpoint
                 string token = await GetTokenId(country, fullname, card, cvc, expyear, expmonth, billingaddline1, amount, billingaddline2, city, state, zip);
                 string res = string.Empty;
-                Uri baseUri = new Uri("http://mainservice.cloudapp.net/Service1.svc");
+                Uri baseUri = new Uri("http://mainservice.apphb.com/Service1.svc");
                 UriTemplate myTemplate = new UriTemplate("{id}/{token}/{amt}");
                 Uri mainUri = myTemplate.BindByPosition(baseUri, "user1@test.com", token, amount);
                 string url = mainUri.AbsoluteUri;
